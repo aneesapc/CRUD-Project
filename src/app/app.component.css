@@ -1,0 +1,52 @@
+.btn {
+    height: 35px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    margin-right: 0px;
+    min-width: 120px;
+}
+
+.input-style-1 {
+    height: 35px;
+    max-width: 250px;
+    font-size: 15px;
+    
+}
+
+.row {
+    margin-top: 20px;
+    margin-left: 1px;
+    margin-right: 1px;
+    display: flex;
+    flex-wrap: nowrap;
+}
+
+.table-style-1 {
+    margin-top: 0px;
+}
+
+.th-style-1 {
+    font-weight: bold;
+    font-size: 15px;
+}
+
+.anchor-style-1{
+    min-width: 35px;
+}
+
+.td-style-2 {
+    font-size: 14px;
+}
+
+.td-style-1 {
+    padding-top: 6px;
+    padding-bottom: 6px;
+    /* max-width: 100px;
+    min-width: 100px; */
+    display: table-cell;
+    vertical-align: center;
+    text-align:center;
+
+}
+
+
