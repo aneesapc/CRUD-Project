@@ -20,53 +20,28 @@
       <thead>
         <tr>
           <th scope="col" class="th-style-1">#</th>
-          <th scope="col" class="th-style-1">First</th>
-          <th scope="col" class="th-style-1">Last</th>
+          <th scope="col" class="th-style-1">First Name</th>
+          <th scope="col" class="th-style-1">Last Name</th>
           <th scope="col" class="th-style-1">Email</th>
-          <th scope="col" class="th-style-1">DOB</th>
-          <th scope="col" class="th-style-1 td-style-1">Actions</th>
+          <th scope="col" class="th-style-1">Date of Birth</th>
+          <th scope="col" class="th-style-1" style="text-align:center;">Actions</th>
         </tr>
       </thead>
       <tbody>
-        <tr>
-          <td class="td-style-2">1</td>
-          <td class="td-style-2">Mark</td>
-          <td class="td-style-2">Otto</td>
-          <td class="td-style-2">@mdo</td>
-          <td class="td-style-2">@mdo</td>
+        
+        <tr *ngFor="let employee of employeeList; let i = index">
+          <td class="td-style-2">{{i+1}}</td>
+          <td class="td-style-2">{{employee.firstName}}</td>
+          <td class="td-style-2">{{employee.lastName}}</td>
+          <td class="td-style-2">{{employee.email}}</td>
+          <td class="td-style-2">{{employee.dob}}</td>
           <td class="td-style-1">
             <div>
               <a class="btn anchor-style-1"><i class="fa fa-pencil" ></i></a>
               <a class="btn anchor-style-1"><i class="fa fa-trash" ></i></a>
             </div>
-          </td>
-        </tr>
-        <tr>
-          <td class="td-style-2">2</td>
-          <td class="td-style-2">Jacob</td>
-          <td class="td-style-2">Thornton</td>
-          <td class="td-style-2">@fat</td>
-          <td class="td-style-2">@mdo</td>
-          <td class="td-style-1">
-            <div>
-              <a class="btn anchor-style-1"><i class="fa fa-pencil" ></i></a>
-              <a class="btn anchor-style-1"><i class="fa fa-trash" ></i></a>
-            </div>
-          </td>
-        </tr>
-        <tr>
-          <td class="td-style-2">3</td>
-          <td class="td-style-2">Larry</td>
-          <td class="td-style-2">the Bird</td>
-          <td class="td-style-2">@twitter</td>
-          <td class="td-style-2">@mdo</td>
-          <td class="td-style-1">
-            <div>
-              <a class="btn anchor-style-1"><i class="fa fa-pencil" ></i></a>
-              <a class="btn anchor-style-1"><i class="fa fa-trash" ></i></a>
-            </div>
-          </td>
-        </tr>
+          </td></tr>
+        
       </tbody>
     </table>
 </div>
