@@ -1,0 +1,52 @@
+ .card {
+     margin-bottom: 12px;
+     margin-top: 12px;
+ }
+ .input-group, .card-title {
+     margin-bottom: 20px;
+ } 
+
+ .input-group-prepend, .form-control {
+     height: 40px;
+ }
+
+ input {
+    font-size: 16px;
+ }
+
+ span {
+     width: 120px;
+ }
+
+ span.input-group-text{
+     font-size: 15px;
+ }
+
+.btn {
+    font-size: 12px;
+    margin-bottom: 6px;
+ }
+
+ input.ng-invalid.ng-touched{
+     border: 1px solid red;
+ }
+
+ @media (max-width: 767px) {
+    .card-body {
+        -webkit-box-flex: 1;
+        flex: 1 1 auto;
+        min-height: 1px;
+        padding: .6rem;
+    }
+ }
+
+ @media (max-width: 375px) {
+    .btn {
+        width: 50%;
+    }
+
+    .row {
+        justify-content: center;
+        float:none!important;
+    }
+ }

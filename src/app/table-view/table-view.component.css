@@ -1,0 +1,21 @@
+.table td {
+    padding: .75rem;
+}
+
+.table td, .table th {
+    vertical-align: middle;
+    font-size: .75rem;
+}
+
+.fa {
+    font-size: 18px;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+
+@media (min-width: 768px) {
+    .table-responsive {
+        display: table;
+    }
+}

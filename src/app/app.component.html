@@ -2,46 +2,31 @@
   <span class="navbar-brand mb-0 h1">CRUD</span>
 </nav>
 <div class="container"> 
-      <div class="row">
-        <div class="input-group mb-3">
+      <!-- Top Buttons -->     
+      <div class="row-style">
+        <div class="input-group col-md-6">
           <div class="input-group-prepend">
-            <button class="btn btn-primary btn-sm" type="button" id="button-addon1">Search</button>
+            <button class="btn btn-primary" type="button" id="button-addon1">Search</button>
           </div>
           <input type="text" 
-          class="form-control input-style-1" 
+          class="form-control width-fill" 
           placeholder="Enter Here" 
           aria-label="Example text with button addon" 
           aria-describedby="button-addon1">     
+        </div >
+        <div class="row-style col-md-6">
+          <button type="button" class="btn btn-primary width-fill ml-auto" (click)=onAddNew()>Add New</button>
         </div>
-        <button type="button" class="btn btn-primary btn-sm float-right">Add New</button>
+        
       </div>
       
-  <table class="table table-striped table-style-1">
-      <thead>
-        <tr>
-          <th scope="col" class="th-style-1">#</th>
-          <th scope="col" class="th-style-1">First Name</th>
-          <th scope="col" class="th-style-1">Last Name</th>
-          <th scope="col" class="th-style-1">Email</th>
-          <th scope="col" class="th-style-1">Date of Birth</th>
-          <th scope="col" class="th-style-1" style="text-align:center;">Actions</th>
-        </tr>
-      </thead>
-      <tbody>
-        
-        <tr *ngFor="let employee of employeeList; let i = index">
-          <td class="td-style-2">{{i+1}}</td>
-          <td class="td-style-2">{{employee.firstName}}</td>
-          <td class="td-style-2">{{employee.lastName}}</td>
-          <td class="td-style-2">{{employee.email}}</td>
-          <td class="td-style-2">{{employee.dob}}</td>
-          <td class="td-style-1">
-            <div>
-              <a class="btn anchor-style-1"><i class="fa fa-pencil" ></i></a>
-              <a class="btn anchor-style-1"><i class="fa fa-trash" ></i></a>
-            </div>
-          </td></tr>
-        
-      </tbody>
-    </table>
+      <div *ngIf = "_global.showCard === 'add'" >
+      <app-form-view></app-form-view>  
+      </div>
+
+      <app-table-view></app-table-view>
+     
+     
+  
 </div>
+

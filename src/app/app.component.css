@@ -1,53 +1,38 @@
 .btn {
-    height: 35px;
-    padding-top: 2px;
-    padding-bottom: 2px;
+    font-size: 12px;
+    margin-bottom: 6px;
     margin-right: 0px;
-    min-width: 120px;
+    height: 40px;
+ }
+
+ .row-style{
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: flex-start;
+	align-items: baseline;
+	align-content: space-around;
 }
 
-.input-style-1 {
-    height: 35px;
-    max-width: 250px;
-    font-size: 15px;
-    
+.col-md-6 {
+    padding: 0px;
 }
 
-.row {
-    margin-top: 20px;
-    margin-left: 1px;
-    margin-right: 1px;
-    display: flex;
-    flex-wrap: nowrap;
+input {
+     height: 40px;
+     font-size: 15px;
+     margin-top: 6px;
+     margin-bottom: 6px;
+ }
+
+
+
+
+@media (max-width: 767px) {
+    .width-fill {
+        width: 100%;
+        margin-left: 0px;
+        margin-right: 0px;
+        max-width: 767px;
+    }
 }
-
-.table-style-1 {
-    margin-top: 0px;
-}
-
-.th-style-1 {
-    font-weight: bold;
-    font-size: 15px;
-}
-
-.anchor-style-1{
-    min-width: 35px;
-}
-
-.td-style-2 {
-    font-size: 14px;
-}
-
-.td-style-1 {
-    padding-top: 6px;
-    padding-bottom: 6px;
-    /* max-width: 100px;
-    min-width: 100px; */
-    display: table-cell;
-    vertical-align: center;
-    text-align:center;
-    
-
-}
-
-

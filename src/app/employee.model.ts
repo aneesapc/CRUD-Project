@@ -4,6 +4,7 @@ export class employeeListModel {
     public email:string;
     public dob:string;
 
+
     constructor (first:string, last:string, email:string, dob:string){
         this.firstName = first;
         this.lastName = last;
