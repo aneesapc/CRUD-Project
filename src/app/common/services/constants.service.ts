@@ -7,5 +7,7 @@ export class ConstantsService {
 
   public showCard: string = '';
 
+  public editIndex: number = null;
+
   constructor() { }
 }

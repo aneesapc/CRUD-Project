@@ -11,17 +11,24 @@
     </thead>
     <tbody> 
       <tr *ngFor="let employee of employeeList; let i = index">
-        <td>{{i+1}}</td>
-        <td>{{employee.firstName}}</td>
-        <td>{{employee.lastName}}</td>
-        <td>{{employee.email}}</td>
-        <td>{{employee.dob}}</td>
-        <td>
-          <div >
-            <a><i class="fa fa-pencil" ></i></a>
-            <a><i class="fa fa-trash" ></i></a>
-          </div>
+        <td colspan="9" *ngIf="this._constantsService.editIndex == i; else elseTemplate">
+          <app-form-view></app-form-view>
         </td>
+        <ng-template #elseTemplate>
+          <td>{{i+1}}</td>
+          <td>{{employee.firstName}}</td>
+          <td>{{employee.lastName}}</td>
+          <td>{{employee.email}}</td>
+          <td>{{employee.dob}}</td>
+          <td>
+            <div>
+              <a><i class="fa fa-pencil" type = "button" (click) = "onEdit(i)"></i></a>
+              <a><i class="fa fa-trash" type = "button" (click) = "onDelete(i)"></i></a>
+            </div>
+          </td>
+        </ng-template>
       </tr>
     </tbody>
-  </table>
+</table>
+
+  

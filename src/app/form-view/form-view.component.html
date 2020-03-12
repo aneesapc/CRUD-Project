@@ -10,7 +10,7 @@
                   <span class="input-group-text " id="">First Name</span>
                 </div>
                 <input type="text" class="form-control" formControlName ="firstName">
-                <span class="col-md-12" *ngIf="!employeeForm.get('firstName').valid && employeeForm.get('firstName').touched">
+                <span class="col-md-12 help-block" *ngIf="!employeeForm.get('firstName').valid && employeeForm.get('firstName').touched">
                  Enter a valid name
                 </span>
               </div>
@@ -21,7 +21,7 @@
                   <span class="input-group-text" id="">Last Name</span>
                 </div>
                 <input type="text" class="form-control" formControlName ="lastName">
-                <span class="col-md-12" *ngIf="!employeeForm.get('lastName').valid && employeeForm.get('lastName').touched">
+                <span class="col-md-12 help-block" *ngIf="!employeeForm.get('lastName').valid && employeeForm.get('lastName').touched">
                   Enter a valid name
                 </span>
               </div>
@@ -34,8 +34,9 @@
                 <span class="input-group-text" id="">Email</span>
               </div>
               <input type="text" class="form-control" formControlName ="email">
-              <span class="col-md-12" *ngIf="!employeeForm.get('email').valid && employeeForm.get('email').touched">
-             Enter a valid email
+              <span class="col-md-12 help-block" *ngIf="!employeeForm.get('email').valid && employeeForm.get('email').touched">
+                <span *ngIf="employeeForm.get('email').errors['emailIsForbidden']; else elseTemplate">Email ID already exist!</span>  
+                    <ng-template #elseTemplate>Enter a valid email</ng-template>  
               </span>
             </div>
             <div class="input-group col-md-6">
@@ -43,14 +44,14 @@
                 <span class="input-group-text" id="">Date of Birth</span>
               </div>
               <input type="text" class="form-control" formControlName ="dob">
-              <span class="col-md-12" *ngIf="!employeeForm.get('dob').valid && employeeForm.get('dob').touched">
+              <span class="col-md-12 help-block" *ngIf="!employeeForm.get('dob').valid && employeeForm.get('dob').touched">
              Enter a valid date of birth (Format:DD-MM-YYYY)
               </span>
             </div>
           </div>
         <!-- Buttons -->
           <div class = "row float-right">
-          <button class="btn btn-primary" type="submit" (click)="onSave()">
+          <button class="btn btn-primary" type="submit" [disabled]="!(employeeForm.valid && employeeForm.touched)" (click)="onSave()">
               <clr-icon shape="floppy"></clr-icon>
               Save
           </button>
