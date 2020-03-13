@@ -11,10 +11,10 @@ import { ConstantsService } from '../common/services/constants.service';
 export class TableViewComponent implements OnInit {
   public employeeList: employeeListModel[];
 
-  constructor( private _employeesService: EmployeeService, public _constantsService: ConstantsService) {
-    this.employeeList = this._employeesService.employeeList;	
+  constructor( public _employeeService: EmployeeService, public _constantsService: ConstantsService) {
+    this.employeeList = this._employeeService.employeeList;	
     console.log(this.employeeList);
-    console.log(this._employeesService.employeeList);
+    console.log(this._employeeService.employeeList);
   }
 
   ngOnInit(): void {
@@ -28,7 +28,7 @@ export class TableViewComponent implements OnInit {
   }
 
   onDelete(index){
-    this._employeesService.employeeList.splice(index, 1);
+    this._employeeService.employeeList.splice(index, 1);
 
   }
 

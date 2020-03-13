@@ -6,8 +6,8 @@ import { Injectable } from '@angular/core';
 export class ConstantsService {
 
   public showCard: string = '';
-
   public editIndex: number = null;
+  public searchString: any;
 
   constructor() { }
 }

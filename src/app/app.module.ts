@@ -10,12 +10,15 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormViewComponent } from './form-view/form-view.component';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { TableViewComponent } from './table-view/table-view.component';
+import { SearchPipe } from './common/search.pipe';
+
 
 @NgModule({
   declarations: [
     AppComponent,
     FormViewComponent,
-    TableViewComponent
+    TableViewComponent,
+    SearchPipe
   ],
   imports: [
     BrowserModule,
@@ -23,9 +26,8 @@ import { TableViewComponent } from './table-view/table-view.component';
     BrowserAnimationsModule,
     ReactiveFormsModule,
     FormsModule,
-    
   ],
-  providers: [DateValidator, ConstantsService, EmployeeService ],
-  bootstrap: [AppComponent]
+  providers: [ DateValidator, ConstantsService, EmployeeService ],
+  bootstrap: [ AppComponent ]
 })
 export class AppModule {}

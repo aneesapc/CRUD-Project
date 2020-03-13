@@ -4,24 +4,23 @@
 <div class="container"> 
       <!-- Top Buttons -->     
       <div class="row-style">
-        <div class="input-group col-md-6">
-          <div class="input-group-prepend">
-            <button class="btn btn-primary" type="button" id="button-addon1">Search</button>
-          </div>
-          <input type="text" 
+        <div class="col-md-6">
+          <input type="text" style="max-width: 350px;" [(ngModel)]="this._constantsService.searchString"
           class="form-control width-fill" 
-          placeholder="Enter Here" 
+          placeholder="Search Here" 
           aria-label="Example text with button addon" 
           aria-describedby="button-addon1">     
         </div >
+      
         <div class="row-style col-md-6">
           <button type="button" class="btn btn-primary width-fill ml-auto" (click)=onAddNew()>Add New</button>
         </div>
-        
       </div>
       
       <div *ngIf = "_constantsService.showCard === 'add'" >
-      <app-form-view></app-form-view>  
+        
+        <app-form-view></app-form-view>  
+
       </div>
 
       <app-table-view></app-table-view>
