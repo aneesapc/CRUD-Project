@@ -25,11 +25,12 @@ export class TableViewComponent implements OnInit {
     console.log(index);
     this._constantsService.editIndex = index;
     console.log(this._constantsService.editIndex);
+    localStorage.setItem('employee-list', JSON.stringify(this._employeeService.employeeList));
   }
 
   onDelete(index){
     this._employeeService.employeeList.splice(index, 1);
-
+    localStorage.setItem('employee-list', JSON.stringify(this._employeeService.employeeList));
   }
 
 }

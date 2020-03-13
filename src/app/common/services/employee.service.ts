@@ -5,6 +5,7 @@ import { employeeListModel } from 'src/app/employee.model';
   providedIn: 'root'
 })
 export class EmployeeService {
+  public localList : any;
 
   employeeList: employeeListModel[] =   [
     new employeeListModel('Mark', 'Twain', 'mark@mdo.com', '15 May 1980'),
@@ -17,10 +18,18 @@ export class EmployeeService {
   
 
   constructor() { 
-    // localStorage.setItem('key', 'Value');
+    this.localList=JSON.parse(localStorage.getItem('employee-list'));
+    console.log(this.localList+' This is local list');
+
+    if (this.localList !== null)
+    {
+      this.employeeList = this.localList;
+    }
+    
+    
   }
 
 }
 
-
+// let myItem = localStorage.getItem('key');
 // localStorage.setItem('key2', 'Value');

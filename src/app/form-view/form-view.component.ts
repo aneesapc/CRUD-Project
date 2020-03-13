@@ -44,6 +44,7 @@ export class FormViewComponent implements OnInit {
     }
 
     this._constantsService.editIndex = null;
+    localStorage.setItem('employee-list', JSON.stringify(this._employeeService.employeeList));
   }
 
   onReset(){
@@ -59,6 +60,7 @@ export class FormViewComponent implements OnInit {
     this._constantsService.showCard=this.showCard;
     console.log(this._constantsService.showCard);
     this._constantsService.editIndex = null;
+    
   };
 
   emailValidator (control: FormControl) : {[s : string] : boolean} {
