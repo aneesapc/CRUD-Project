@@ -10,12 +10,9 @@ import { EmployeeService } from '../common/services/employee.service';
   styleUrls: ['./form-view.component.css']
 })
 export class FormViewComponent implements OnInit {
-  public showCard: string;
   employeeForm: FormGroup;
 
-
   constructor( private _constantsService: ConstantsService, public _employeeService: EmployeeService) {
-    this.showCard=this._constantsService.showCard;	
   }
 
   ngOnInit(): void {
@@ -33,10 +30,7 @@ export class FormViewComponent implements OnInit {
   
   onSave(){
     this._constantsService.showCard = 'save';
-    console.log(this.employeeForm);
 
-    console.warn(this.employeeForm.value);
-    
     if (this._constantsService.editIndex ==null) {
       this._employeeService.employeeList.push(this.employeeForm.value);
     } else {
@@ -49,22 +43,16 @@ export class FormViewComponent implements OnInit {
 
   onReset(){
     this.employeeForm.reset();
-    console.log(this._employeeService);
-  
   }
 
   onExit(){
-    console.log(this.showCard);
-    this.showCard = 'exit';
-    console.log(this.showCard);
-    this._constantsService.showCard=this.showCard;
-    console.log(this._constantsService.showCard);
-    this._constantsService.editIndex = null;
-    
+    this._constantsService.showCard='exit';
+    this._constantsService.editIndex = null;  
   };
 
   emailValidator (control: FormControl) : {[s : string] : boolean} {
-    if((this._employeeService.employeeList.some(item => item.email === control.value) && this._constantsService.showCard === 'add')){
+    if((this._employeeService.employeeList.some(item => item.email === control.value) 
+    && this._constantsService.showCard === 'add')){
       return { 'emailIsForbidden' : true} ;
     }
     return null;

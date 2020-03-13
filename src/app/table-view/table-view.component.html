@@ -10,7 +10,7 @@
       </tr>
     </thead>
     <tbody> 
-      <tr *ngFor="let employee of employeeList | employeeFilter : this._constantsService.searchString; let i = index">
+      <tr *ngFor="let employee of this._employeeService.employeeList | employeeFilter : this._constantsService.searchString; let i = index">
         <td colspan="9" *ngIf="this._constantsService.editIndex == i; else elseTemplate">
           <app-form-view></app-form-view>
         </td>

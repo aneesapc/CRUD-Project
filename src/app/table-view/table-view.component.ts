@@ -9,12 +9,8 @@ import { ConstantsService } from '../common/services/constants.service';
   styleUrls: ['./table-view.component.css']
 })
 export class TableViewComponent implements OnInit {
-  public employeeList: employeeListModel[];
 
   constructor( public _employeeService: EmployeeService, public _constantsService: ConstantsService) {
-    this.employeeList = this._employeeService.employeeList;	
-    console.log(this.employeeList);
-    console.log(this._employeeService.employeeList);
   }
 
   ngOnInit(): void {
@@ -22,9 +18,7 @@ export class TableViewComponent implements OnInit {
 
   onEdit(index){
     this._constantsService.showCard = "edit";
-    console.log(index);
     this._constantsService.editIndex = index;
-    console.log(this._constantsService.editIndex);
     localStorage.setItem('employee-list', JSON.stringify(this._employeeService.employeeList));
   }
 

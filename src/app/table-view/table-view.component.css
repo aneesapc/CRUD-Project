@@ -5,6 +5,7 @@
 .table td, .table th {
     vertical-align: middle;
     font-size: .75rem;
+    font-weight: normal;
 }
 
 .fa {
